@@ -1,0 +1,99 @@
+html, body {
+  font-family: Lato, sans-serif; /*для безопасности используем шрифт без засечек*/
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.button {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 52px;
+  padding: 0px 40px;
+  color: #fff;
+  border-radius: 4px;
+  background: linear-gradient(45deg, #ff3f3a 0%, #f75e05 100%);
+  white-space: nowrap; /*чтобы текст кнопки не переходил на новую строку при уменьшении ширины вьюпорта*/
+
+}
+
+.logo {
+}
+/*-------------------все что выше это общие элементы-------------------------*/
+.header {
+  font-weight: 700;
+  color: #424551;
+}
+.header__top {
+}
+
+.header__top-inner {
+  display: flex;
+  /*для флексбокса элементы друг за другом выстраиваем*/
+  justify-content: space-between;
+  /*выравнивание по центру родителя*/
+  align-items: center;
+  /*выравнивание элементов относительно друг друга*/
+  padding: 20px 0;
+}
+.header__logo { /*по БЭМ у блока не может быть марджина поэтому мы задали логотипу класс совй*/
+  margin-right: 60px;
+}
+.header__nav {
+  margin-right: auto; /*чтобы навигация занимала все  место между кнопками и лого*/
+}
+.header__nav-list {
+  display: flex;
+}
+.header__nav-item {
+  margin-right: 40px;
+}
+.header__nav-item:last-child { /*с помощью псевдоэлемента уазываем что у contacts нет отступа справа*/
+  margin-right: 0;
+}
+.header__nav-link {
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.header__btn-box {
+  display: flex;
+  align-items: center;
+  
+}
+.header__top-btn {
+  margin-right: 36px;
+}
+
+.header__user-nav {
+  position: relative;
+  padding-left: 28px; /*20px icons + padding between links and icon*/
+}
+
+.header__user-nav::before {
+  content: "";
+  position: absolute; /*расположение вне зависимости от остального в блоке*/
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  /*Функция используется для смещения элемента вверх-вниз или влево-вправо. В целом, ту же работу выполняют CSS-свойства top, right, bottom, left — например, для абсолютно (position: absolute) или относительно (position: relative) спозиционированных элементов. Но есть ряд важных отличий: элемент позиционируется относительно соответствующих сторон родителя. То есть left: 20px сместит элемент на 20 пикселей относительно левой границы родителя, а translate(20px) сместит элемент вправо относительно того места, где тот находился до трансформации. В целом, позиционирование и translate прекрасно сочетаются друг с другом. Позиционирование лучше использовать для изначального расположения элемента на странице, а translate применять, если нужно добавить анимации движения.*/
+  display: block;
+  background: url("../images/icons/user-icon.svg") no-repeat;
+  width: 20px;
+  height: 20px;
+
+}
+.header__user-btn {
+  white-space: nowrap;
+  line-height: 1.6;
+}
+.header__body {
+}
